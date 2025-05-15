@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}View All Data{% endblock %}
+{% block content %}
+    {% for i in values%}
+    
+    <div>
+        Name: {{ i.author }}, password: {{ i.password }}
+        <form action="#" method="post" style="display:inline">
+            <input type="hidden" name="id" value="{{i.author}}"/>
+            <input type="submit" value="DELETE" />
+        </form>
+    </div>
+    <p></p>
+    {% endfor %}
+{% endblock %}

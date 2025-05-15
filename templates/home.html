@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for msg in messages %}
+            <p>{{msg}}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<H1>UPLOADED BLOGS</H1>
+<div class="mb-3">
+    {% for card in cards %}
+    <div class="card mb-3" style="width: 93rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{card.title}}</h5>
+            <p class="card-text"><small class="text-body-secondary">Author : {{card.author}}</small></p>
+            <form action="#" method="post">
+                <input type="hidden" name="c" value="{{card.title}}"/>
+                <input type="submit" value="View"/>
+            </form> 
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

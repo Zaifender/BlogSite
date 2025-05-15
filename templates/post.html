@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Post{% endblock %}
+{% block content %}
+<div class="container-fluid d-flex flex-column min-vh-100">
+    <div class="row" style="height: 90vh;"> 
+        <div class="col ms-4 my-4 d-flex align-items-center">
+            <div class="card h-100" style="width: 90rem;">
+                <div class="card-body">
+                    <h1 class="card-title">{{details.title}}</h1>
+                    <p class="card-text">{{details.content}}</p>
+                    <p class="card-text"><small class="text-body-secondary">Author : {{details.author}}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
